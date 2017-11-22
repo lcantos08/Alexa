@@ -1,9 +1,9 @@
 const SKILL_ID = 'amzn1.ask.skill.6c4d29d2-3a3a-4b90-8274-78846c5d5864';
 
 const WELCOME_MSG = ''.concat(
-    'Welcome to Universal Containers. ',
-    'Please ask me about the status of your package and include your order id. ',
-    'For example, Ask Universal Containers about order 12345?'
+    'Welcome to Body Tech Lemery. ',
+    'Please ask me about the status of the daily sales. ',
+    'For example, say how much is the total sales today?'
 );
 const REPROMPT_TEXT = 'Ask me where your package is by saying Where is order 12345?';
 
