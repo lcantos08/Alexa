@@ -2,8 +2,8 @@ const SKILL_ID = 'amzn1.ask.skill.6c4d29d2-3a3a-4b90-8274-78846c5d5864';
 
 const WELCOME_MSG = ''.concat(
     'Welcome to Body Tech Lemery. ',
-    'Please ask me about the status of the daily sales. ',
-    'For example, say how much is the total sales today?'
+    'Please ask me about the status of the daily sales, staff commissions and expenses. ',
+    'For example, say how much is the total sales today or what are the expenses today?'
 );
 const REPROMPT_TEXT = 'Ask me where your package is by saying Where is order 12345?';
 
@@ -62,7 +62,8 @@ alexaApp.intent("OrderTrackingIntent", {
         },
         "utterances": [
             "for status on order number {OrderId}",
-            "about {OrderId}"
+            "about {OrderId}",
+            "staff commision"
         ]
     },
     function(request, response) {
@@ -77,7 +78,7 @@ alexaApp.intent("OrderTrackingIntent", {
 });
 
 alexaApp.intent("AMAZON.HelpIntent", {}, function(request, response) {
-    response.say("Here's some help. Try saying 'Ask Universal Containers for status on order 100'");
+    response.say("Here's some help. Try saying 'Ask Body Tech for status on order 100'");
     response.card({
         type: "Simple",
         title: "Universal Containers",
