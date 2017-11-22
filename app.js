@@ -1,7 +1,7 @@
 const SKILL_ID = 'amzn1.ask.skill.6c4d29d2-3a3a-4b90-8274-78846c5d5864';
 
 const WELCOME_MSG = ''.concat(
-    'Hi, Welcome to Body Tech Lemery. ',
+    'Hi Olivia, how are you? Welcome to Body Tech Lemery. ',
     'Please ask me about the status of the daily sales, staff commissions, and expenses. ',
     'For example, simply say how much is the total sales today, or what are the expenses today?'
 );
