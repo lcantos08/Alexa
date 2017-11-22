@@ -62,8 +62,7 @@ alexaApp.intent("OrderTrackingIntent", {
         },
         "utterances": [
             "for status on order number {OrderId}",
-            "about {OrderId}",
-            "daily sales {OrderId}"
+            "about {OrderId}"
         ]
     },
     function(request, response) {
@@ -76,6 +75,26 @@ alexaApp.intent("OrderTrackingIntent", {
         });
 
 });
+
+alexaApp.intent("DailySalesIntent", {
+        "slots": {
+            "SalesDate": "AMAZON.DATE"
+        },
+        "utterances": [
+            "for daily sales for {SalesDate}"
+        ]
+    },
+    function(request, response) {
+
+        response.reprompt("I didn't hear a valid order number. Please ask something like 'What is the status of order number 100?'");
+        //request.slot('OrderId');
+        return mysalesforce.getOrderStatus(100).then(function(output) {
+              response.say(output.say);
+              response.card(output.card);
+        });
+
+});
+
 
 alexaApp.intent("AMAZON.HelpIntent", {}, function(request, response) {
     response.say("Here's some help. Try saying 'Ask Body Tech for status on order 100'");
