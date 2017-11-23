@@ -105,7 +105,7 @@ function getDailySummary(){
         });
     });
 }
-
+/*
 function getOrderStatus(orderId) {
 
     var query1 = ''.concat(
@@ -171,6 +171,6 @@ function getOrderStatus(orderId) {
         });
     });
 }
-
+*/
 exports.getOrderStatus = getOrderStatus;
 exports.getDailySummary = getDailySummary;
