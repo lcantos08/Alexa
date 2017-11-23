@@ -96,7 +96,7 @@ function getDailySummary(ddate){
                 
                 
                 var group_to_values = a.reduce(function (obj, item) {
-    obj[item.sId] = obj[item.group] || [];
+    obj[item.sId] = obj[item.sId] || [];
     obj[item.sId].push(item.sName);
     return obj;
 }, {});
