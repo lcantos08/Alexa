@@ -88,14 +88,14 @@ function getDailySummary(ddate){
                     commission: result[i].get('service__r').Commission__c
                 });
             }
-           let speechOutput ='Hi my name is Olivia Natalie. ';
+           let speechOutput ='Hi my name is Olivia Natalie. Welcome to Body Tech Lemery. ';
             
             if (a.length==0){
-                    speechOutput += ' There are no services found in the system on ${ddate}. It is either, hindi sila nag-input o zero talaga -- In short, bokya!!! Hahahah!!';
+                    speechOutput += ' There are no services found in the system on ${ddate}. It is either, hindi sila nag-input, o zero talaga, in short, bokya !!! Hahahah!!';
             }else{
                 let amount = 0;
                 let b = [], c=[];
-                speechOutput = `Welcome to Body Tech Lemery. There were ${result.length} ${pluralize("services",result.length)} on ${ddate}. `;
+                speechOutput = ` There were ${result.length} ${pluralize("services",result.length)} on ${ddate}. `;
                 
                 
                 var group_to_values = a.reduce(function (obj, item) {
