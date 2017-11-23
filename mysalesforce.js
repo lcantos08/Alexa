@@ -93,7 +93,7 @@ function getDailySummary(ddate){
                 let amount = 0;
                 let b = [], c=[];
                 speechOutput = `Welcome to Body Tech Lemery. Kumusta? There are ${result.length} ${pluralize("services",result.length)} so far. `;
-                speechOutput+='The services are the following:';
+                
                 
                 var group_to_values = a.reduce(function (obj, item) {
     obj[item.sId] = obj[item.group] || [];
@@ -105,12 +105,19 @@ var groups = Object.keys(group_to_values).map(function (key) {
     return {sId: key, sName: group_to_values[key]};
 });
                 console.log('groups:::'+groups);
+                speechOutput+='The services are the following:';
+                for (let i = 0; i < groups.length; i++) {
+                    var g = groups[i];
+                     speechOutput += `<p> ${g.length} ${g[0].sName}</p>`;
+                     if (i === groups.length - 2) speechOutput += ' and ';
+                }
+                
                 for (let i = 0; i < a.length; i++) {
                     let id = a[i].sId;
                     
-                    speechOutput += `<p> ${a[i].sName} </p>`;
+                   // speechOutput += `<p> ${a[i].sName} </p>`;
                    
-                    if (i === result.length - 2) speechOutput += ' and ';
+                   // if (i === result.length - 2) speechOutput += ' and ';
                     amount+= parseFloat(a[i].price);
                 }
                 speechOutput += '<break strength="x-strong"/>Total amount is ';
