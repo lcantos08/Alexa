@@ -92,7 +92,7 @@ function getDailySummary(ddate){
                 speechOutput = `There are ${result.length} ${pluralize("services",result.length)} so far. `;
                 speechOutput += '<break strength="x-strong"/>Total amount is ';
                 for (let i = 0; i < result.length; i++) {
-                    amount+= (result[i].price);
+                    amount+= parseFloat(result[i].price);
                 }
                 
                 speechOutput +=''+amount;
