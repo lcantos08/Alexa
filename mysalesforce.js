@@ -39,7 +39,7 @@ function simplifyDataStructure(result) {
             truckLng: result[i].get('truck__r').Longitude__c
         });
     }
-    let speechoutput ='';
+    return a;
     
 }
 
@@ -77,16 +77,16 @@ function getDailySummary(){
            let speechOutput ='';
             
             if (a.length==0){
-                    speechOutput = 'No service!!!';
+                    speechOutput = 'No service today.';
             }else{
                 let amount = 0;
-                speechOutput = `There are ${result.length} ${pluralize("services",result.length)} so far. `;
+                //speechOutput = `There are ${result.length} ${pluralize("services",result.length)} so far. `;
                 speechOutput += '<break strength="x-strong"/>Total amount is ';
                 for (let i = 0; i < result.length; i++) {
                     amount+= (result[i].price);
                 }
                 
-                speechOutput +=''+amount;
+                //speechOutput +=''+amount;
                 
                 let output = {
                 say: speechOutput,
