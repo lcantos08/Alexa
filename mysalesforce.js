@@ -114,7 +114,7 @@ function getDailySummary(ddate){
                 for (let i = 0; i < groups.length; i++) {
                     var g = groups[i];                    
                      speechOutput += `<p>${g.sName.length} ${g.sName[0]}</p>`;
-                     if (i === groups.length - 2) speechOutput += 'and ';
+                     //if (i === groups.length - 2) speechOutput += 'and ';
                 }
                 
                 
@@ -154,7 +154,7 @@ function getDailySummary(ddate){
                     total_com+=am;
                    speechOutput += '<break strength="x-strong"/>';
                    speechOutput += `<p>${x.st} ${am} pesos </p>`;
-                   if (i === staff_groups.length - 2) speechOutput += 'and ';
+                   //if (i === staff_groups.length - 2) speechOutput += 'and ';
                     
                 }
                 
@@ -167,7 +167,7 @@ function getDailySummary(ddate){
                 speechOutput += ' pesos. ';
                 
                 speechOutput+='<p>Goodbye. </p>';
-                speechOutput+='<p>PS, Ma hal co c nah nigh...</p>';
+                speechOutput+='<p>PS, Mahal ko c nah nigh...</p>';
                 
                 
             }
