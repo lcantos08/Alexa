@@ -88,14 +88,14 @@ function getDailySummary(ddate){
                     commission: result[i].get('service__r').Commission__c
                 });
             }
-           let speechOutput ='';
+           let speechOutput ='Hi my name is Olivia Natalie. ';
             
             if (a.length==0){
-                    speechOutput = 'No service today.';
+                    speechOutput = ' There is no service on ${ddate}. In short, matumal, nga-nga. Hahahah!!';
             }else{
                 let amount = 0;
                 let b = [], c=[];
-                speechOutput = `Hi my name is Olivia Natalie. Welcome to Body Tech Lemery. There were ${result.length} ${pluralize("services",result.length)} on ${ddate}. `;
+                speechOutput = `Welcome to Body Tech Lemery. There were ${result.length} ${pluralize("services",result.length)} on ${ddate}. `;
                 
                 
                 var group_to_values = a.reduce(function (obj, item) {
