@@ -44,7 +44,7 @@ function simplifyDataStructure(result) {
 }
 
 function getDailySummary(){
-    var query1 =''.concat(
+    /*var query1 =''.concat(
         'select ',
         'service__r.service_type__c, ',
         'service__r.Name__c, ',
@@ -92,7 +92,7 @@ function getDailySummary(){
                 say: speechOutput,
                 card: {
                     type: "Simple",
-                    title: "Universal Containers",
+                    title: "Body Tech",
                     content: speechOutput.replace(/<(?:.|\n)*?>/gm, '')
                 }
                 };
@@ -106,6 +106,7 @@ function getDailySummary(){
             reject(null);
         });
     });
+    */
 }
 /*
 function getOrderStatus(orderId) {
