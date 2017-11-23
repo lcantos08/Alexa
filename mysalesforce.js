@@ -49,6 +49,7 @@ function getDailySummary(ddate){
     console.log('CLIENT_ID:: '+CLIENT_ID);
     console.log('USERNAME:: '+USERNAME);
     console.log('PASSWORD:: '+pw);
+    console.log('DDate:: '+ddate);
     var query1 =''.concat(
         'select ',
         'service__r.service_type__c, ',
