@@ -92,7 +92,7 @@ function getDailySummary(ddate){
             }else{
                 let amount = 0;
                 let b = [], c=[];
-                speechOutput = `Welcome to Body Tech Lemery. Kumusta? There are ${result.length} ${pluralize("services",result.length)} so far. `;
+                speechOutput = `Hi Olivia, Welcome to Body Tech Lemery. Kumusta na? Meron na tayong ${result.length} ${pluralize("services",result.length)} so far. `;
                 
                 
                 var group_to_values = a.reduce(function (obj, item) {
