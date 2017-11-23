@@ -55,7 +55,7 @@ alexaApp.launch(function(request, response) {
 /**
  * Order Tracking Intent
  */
-
+/*
 alexaApp.intent("OrderTrackingIntent", {
         "slots": {
             "OrderId": "AMAZON.NUMBER"
@@ -75,10 +75,10 @@ alexaApp.intent("OrderTrackingIntent", {
         });
 
 });
-
+*/
 alexaApp.intent("DailySalesIntent", {
         "slots": {
-            "SalesDate": "AMAZON.Date"
+            "SalesDate": "AMAZON.DATE"
         },
         "utterances": [
             "for daily sales for {SalesDate}"
