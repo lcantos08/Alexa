@@ -95,7 +95,7 @@ function getDailySummary(ddate){
             }else{
                 let amount = 0;
                 let b = [], c=[];
-                speechOutput = `Hi Olivia, Welcome to Body Tech Lemery. There were ${result.length} ${pluralize("services",result.length)} on ${ddate}. `;
+                speechOutput = `Hi my name is Olivia, Welcome to Body Tech Lemery. There were ${result.length} ${pluralize("services",result.length)} on ${ddate}. `;
                 
                 
                 var group_to_values = a.reduce(function (obj, item) {
@@ -164,7 +164,8 @@ function getDailySummary(ddate){
                 speechOutput +=''+(amount-total_com);
                 speechOutput += ' pesos';
                 
-                speechOutput+='<p>Good bye!</p>';
+                speechOutput+='<p>Godd bye...</p>';
+                speechOutput+='<p>PS, Mahal ko si nanay...</p>';
                 
                 let output = {
                 say: speechOutput,
