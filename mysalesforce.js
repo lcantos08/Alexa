@@ -110,7 +110,7 @@ var groups = Object.keys(group_to_values).map(function (key) {
                 for (let i = 0; i < groups.length; i++) {
                     var g = groups[i];
                     
-                     speechOutput += `<p>${g.sName}</p>`;
+                     speechOutput += `<p>${g.sName.length} ${g.sName[0]}</p>`;
                      if (i === groups.length - 2) speechOutput += ' and ';
                 }
                 
