@@ -167,7 +167,9 @@ function getDailySummary(ddate){
                 speechOutput+='<p>Goodbye. </p>';
                 speechOutput+='<p>PS, Mahal ko si nanay...</p>';
                 
-                let output = {
+                
+            }
+            let output = {
                 say: speechOutput,
                 card: {
                     type: "Simple",
@@ -177,7 +179,6 @@ function getDailySummary(ddate){
                 };
                 console.log(output);
                 resolve(output);
-            }
             
         }).error(function(err) {
             
