@@ -135,12 +135,12 @@ function getDailySummary(ddate){
                 speechOutput+='The therapist service commisions are the following:';
                 
                 for (let i = 0; i < staff_groups.length; i++) {
-                    var c = staff_groups[i];
+                    var x = staff_groups[i];
                     var am = 0;
-                    for (let j = 0; j < c.am.length; j++) {
-                        am+= c.am[j].am;
+                    for (let j = 0; j < x.am.length; j++) {
+                        am+= x.am[j].am;
                     }
-                   speechOutput += `<p>${c.st.st} ${am}</p>`;
+                   speechOutput += `<p>${x.st.st} ${am}</p>`;
                    if (i === staff_groups.length - 2) speechOutput += ' and ';
                     
                 }
