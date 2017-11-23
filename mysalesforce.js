@@ -162,10 +162,10 @@ function getDailySummary(ddate){
                 
                 speechOutput += '<break strength="x-strong"/> <p>The Net daily sales is </p>';
                 speechOutput +=''+(amount-total_com);
-                speechOutput += ' pesos';
+                speechOutput += ' pesos ';
                 
-                speechOutput+='<p>Good bye...</p>';
-                speechOutput+='<p>PS, Mahal ko si nanay...</p>';
+                speechOutput+='<p>Goodbye</p>';
+               // speechOutput+='<p>PS, Mahal ko si nanay...</p>';
                 
                 let output = {
                 say: speechOutput,
