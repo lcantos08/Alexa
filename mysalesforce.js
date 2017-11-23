@@ -95,7 +95,7 @@ function getDailySummary(ddate){
             }else{
                 let amount = 0;
                 let b = [], c=[];
-                speechOutput = `Hi my name is Olivia, Welcome to Body Tech Lemery. There were ${result.length} ${pluralize("services",result.length)} on ${ddate}. `;
+                speechOutput = `Hi Welcome to Body Tech Lemery. There were ${result.length} ${pluralize("services",result.length)} on ${ddate}. `;
                 
                 
                 var group_to_values = a.reduce(function (obj, item) {
