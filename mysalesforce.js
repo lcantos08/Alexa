@@ -139,9 +139,9 @@ function getDailySummary(ddate){
                     console.log('XXXXX::: ' + JSON.stringify(x));
                     var am = 0;
                     for (let j = 0; j < x.am.length; j++) {
-                        am+= x.am[j].am;
+                        am+= x.am[j];
                     }
-                   speechOutput += `<p>${x.st.st} ${am}</p>`;
+                   speechOutput += `<p>${x.st} ${am}</p>`;
                    if (i === staff_groups.length - 2) speechOutput += ' and ';
                     
                 }
