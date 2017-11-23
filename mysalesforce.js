@@ -80,7 +80,7 @@ function getDailySummary(ddate){
             let result = results.records;
             for (let i = 0; i < result.length; i++) {
                 a.push({
-                    therapist: result[i].get('Staff_Commissions__r')[0].Staff__r.Alias__c,
+                    therapist: result[i].get('Staff_Commissions__r'),
                     sId: result[i].get('service__r').Id,
                     sType: result[i].get('service__r').service_type__c,
                     sName: result[i].get('service__r').Name__c,
