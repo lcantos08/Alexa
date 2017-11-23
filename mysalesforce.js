@@ -93,7 +93,7 @@ function getDailySummary(ddate){
             if (a.length==0){
                 speechOutput += ' There are no services found in the system on ' + ddate;
                 speechOutput += '<p> It is either, hindi seela nag-input sa system, o zero lang talaga! </p>'; 
-                speechOutput += '<p> in short, Vok-ya!!! <prosody rate="fast">Ka e neice. Hahahahahaha </prosody> </p>';
+                speechOutput += '<p> in short, Vok-ya!!! <prosody rate="fast">Ka e neice.</prosody> Hahahahaha </p>';
             }else{
                 let amount = 0;
                 let b = [], c=[];
@@ -171,7 +171,7 @@ function getDailySummary(ddate){
                 
                 
             }
-            speechOutput+=' hashtag low-dee. hashtag pet-ma-lu';
+            speechOutput+=' hashtag low-dee. hashtag pet-malou';
             let output = {
                 say: speechOutput,
                 card: {
