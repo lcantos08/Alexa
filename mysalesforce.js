@@ -60,6 +60,7 @@ function getDailySummary(ddate){
         'where Date_Time__c=',
         ddate
     );
+    console.log('QUERY:: '+query1);
     return new Promise(function(resolve, reject) {
         org.authenticate({ // authenticate the user
 
