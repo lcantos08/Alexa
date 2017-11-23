@@ -58,7 +58,7 @@ function getDailySummary(ddate){
         'service__r.Name__c, ',
         'Service__r.Price__c, ',
         'Service__r.Commission__c, ',
-        '(Select Staff__r.Alias__c from Staff_Commissions__r) ',
+        '(Select Staff__r.Alias__c, Amount__c from Staff_Commissions__r) ',
         'from Client_Service__c ',
         'where Date_Time__c=',
         ddate
@@ -119,7 +119,7 @@ var groups = Object.keys(group_to_values).map(function (key) {
                 
                 for (let i = 0; i < a.length; i++) {
                     let id = a[i].sId;
-                    console.log('theraphist::' + a[i].therapist);
+                    console.log('theraphist::' + JSON.stringify(a[i].therapist));
                    // speechOutput += `<p> ${a[i].sName} </p>`;
                    
                    // if (i === result.length - 2) speechOutput += ' and ';
