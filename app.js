@@ -76,6 +76,25 @@ alexaApp.intent("OrderTrackingIntent", {
 
 });
 
+alexaApp.intent("DailySalesIntent", {
+        "slots": {
+            "SalesDate": "AMAZON.Date"
+        },
+        "utterances": [
+            "for daily sales for {SalesDate}"
+        ]
+    },
+    function(request, response) {
+
+        response.reprompt("I didn't hear a valid date. Please ask something like 'What is the daily sales for October 20, 2017");
+        //request.slot('OrderId')
+        return mysalesforce.getDailySummary().then(function(output) {
+              response.say(output.say);
+              response.card(output.card);
+        });
+
+});
+
 
 alexaApp.intent("AMAZON.HelpIntent", {}, function(request, response) {
     response.say("Here's some help. Try saying 'Ask Body Tech for status on order 100'");
