@@ -43,7 +43,7 @@ function simplifyDataStructure(result) {
     
 }
 
-function getDailySummary(mDate){
+function getDailySummary(){
     var query1 =''.concat(
         'select ',
         'service__r.service_type__c, ',
@@ -74,7 +74,31 @@ function getDailySummary(mDate){
                     commission: result[i].get('service__r').Commission__c
                 });
             }
-            return a;
+           let speechOutput ='';
+            
+            if (a.length==0){
+                    speechOutput = 'No service!!!';
+            }else{
+                let amount = 0;
+                speechOutput = `There are ${result.length} ${pluralize("services",result.length)} so far. `;
+                speechOutput += '<break strength="x-strong"/>Total amount is ';
+                for (let i = 0; i < result.length; i++) {
+                    amount+= (result[i].price);
+                }
+                
+                speechOutput +=''+amount;
+                
+                let output = {
+                say: speechOutput,
+                card: {
+                    type: "Simple",
+                    title: "Universal Containers",
+                    content: speechOutput.replace(/<(?:.|\n)*?>/gm, '')
+                }
+                };
+                console.log(output);
+                resolve(output);
+            }
             
         }).error(function(err) {
         
@@ -149,3 +173,4 @@ function getOrderStatus(orderId) {
 }
 
 exports.getOrderStatus = getOrderStatus;
+exports.getDailySummary = getDailySummary;
