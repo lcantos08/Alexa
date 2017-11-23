@@ -172,5 +172,5 @@ function getOrderStatus(orderId) {
     });
 }
 */
-exports.getOrderStatus = getOrderStatus;
+//exports.getOrderStatus = getOrderStatus;
 exports.getDailySummary = getDailySummary;
