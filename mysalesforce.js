@@ -44,7 +44,7 @@ function simplifyDataStructure(result) {
 }
 
 function getDailySummary(ddate){
-    ddate = '2016-10-01';
+    ddate = '2017-10-01';
     let pw = PASSWORD+'KtKPCXRDCaMZi9F1aQ808q661';
     console.log('CLIENT_SECRET:: '+CLIENT_SECRET);
     console.log('CLIENT_ID:: '+CLIENT_ID);
