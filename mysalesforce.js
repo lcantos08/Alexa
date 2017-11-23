@@ -76,7 +76,7 @@ function getDailySummary(ddate){
             })
         }).then(function(results){
             let a = [];
-            console.log('RESULTS:: '+results);
+            console.log('RESULTS:: '+JSON.stringify(results));
             let result = results.records;
             for (let i = 0; i < result.length; i++) {
                 a.push({
