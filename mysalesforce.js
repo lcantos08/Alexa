@@ -43,7 +43,7 @@ function simplifyDataStructure(result) {
     
 }
 
-function getDailySummary(){
+function getDailySummary(ddate){
     let pw = PASSWORD+'KtKPCXRDCaMZi9F1aQ808q661';
     console.log('CLIENT_SECRET:: '+CLIENT_SECRET);
     console.log('CLIENT_ID:: '+CLIENT_ID);
@@ -56,7 +56,8 @@ function getDailySummary(){
         'Service__r.Price__c, ',
         'Service__r.Commission__c ',
         'from Client_Service__c ',
-        'where Date_Time__c=2016-10-10'
+        'where Date_Time__c=',
+        ddate
     );
     return new Promise(function(resolve, reject) {
         org.authenticate({ // authenticate the user
