@@ -55,7 +55,7 @@ function getDailySummary(){
         'service__r.Name__c, ',
         'Service__r.Price__c, ',
         'Service__r.Commission__c ',
-        'from Client_Service__c where ',
+        'from Client_Service__c ',
         'where Date_Time__c=2016-10-10'
     );
     return new Promise(function(resolve, reject) {
