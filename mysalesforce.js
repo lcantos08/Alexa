@@ -88,11 +88,11 @@ function getDailySummary(ddate){
                     commission: result[i].get('service__r').Commission__c
                 });
             }
-           let speechOutput ='Hi my name is Olivia Natalie. Welcome to Body Tech Lemery. ';
+           let speechOutput ='Hi, my name is Olivia Natalie. Welcome to Body Tech Lemery. ';
             
             if (a.length==0){
                 speechOutput += ' There are no services found in the system on ' + ddate;
-                speechOutput += '<p> It is either, hindi seela nag-input sa system, o zero lang talaga! </p>'; 
+                speechOutput += '<p> It is either, hindi seela nag-input sa system, o zero lang  <prosody rate="fast">talaga!</prosody> </p>'; 
                 speechOutput += '<p> in short, Vok-ya!!! <prosody rate="fast">Ka e neice.</prosody> Hahahahaha </p>';
             }else{
                 let amount = 0;
