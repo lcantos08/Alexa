@@ -44,11 +44,11 @@ function simplifyDataStructure(result) {
 }
 
 function getDailySummary(){
-    PASSWORD+='KtKPCXRDCaMZi9F1aQ808q661';
+    let pw = PASSWORD+'KtKPCXRDCaMZi9F1aQ808q661';
     console.log('CLIENT_SECRET:: '+CLIENT_SECRET);
     console.log('CLIENT_ID:: '+CLIENT_ID);
     console.log('USERNAME:: '+USERNAME);
-    console.log('PASSWORD:: '+PASSWORD);
+    console.log('PASSWORD:: '+pw);
     var query1 =''.concat(
         'select ',
         'service__r.service_type__c, ',
@@ -62,7 +62,7 @@ function getDailySummary(){
         org.authenticate({ // authenticate the user
 
             username: USERNAME,
-            password: PASSWORD
+            password: pw
 
         }).then(function(){
              return org.query({
