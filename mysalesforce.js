@@ -44,7 +44,7 @@ function simplifyDataStructure(result) {
 }
 
 function getDailySummary(ddate){
-    ddate = '2017-10-01';
+    ddate = '2015-10-01';
     let pw = PASSWORD+'KtKPCXRDCaMZi9F1aQ808q661';
     console.log('CLIENT_SECRET:: '+CLIENT_SECRET);
     console.log('CLIENT_ID:: '+CLIENT_ID);
@@ -89,13 +89,16 @@ function getDailySummary(ddate){
                     speechOutput = 'No service today.';
             }else{
                 let amount = 0;
-                speechOutput = `There are ${result.length} ${pluralize("services",result.length)} so far. `;
-                speechOutput += '<break strength="x-strong"/>Total amount is ';
+                speechOutput = `Welcome to Body Tech Lemery. There are ${result.length} ${pluralize("services",result.length)} so far. `;
+                speechOutput+='The services are the following:';
                 for (let i = 0; i < a.length; i++) {
                     console.log('result[i] : '+a[i]);
+                    speechOutput += `<p> ${a[i].sName} </p>`;
+                   
+                    if (i === result.length - 2) speechOutput += ' and ';
                     amount+= parseFloat(a[i].price);
                 }
-                
+                speechOutput += '<break strength="x-strong"/>Total amount is ';
                 speechOutput +=''+amount;
                 
                 let output = {
