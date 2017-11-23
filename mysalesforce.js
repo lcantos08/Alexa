@@ -108,7 +108,7 @@ function getDailySummary(ddate){
                     return {sId: key, sName: group_to_values[key]};
                 });
                 
-                speechOutput+='The services are the following:';
+                speechOutput+='<p>The services are the following:</p>';
                 for (let i = 0; i < groups.length; i++) {
                     var g = groups[i];                    
                      speechOutput += `<p>${g.sName.length} ${g.sName[0]}</p>`;
@@ -126,7 +126,7 @@ function getDailySummary(ddate){
                     amount+= parseFloat(a[i].price);
                 }
                 
-                speechOutput += '<break strength="x-strong"/>Total gross service amount is ';
+                speechOutput += '<break strength="x-strong"/><p>Total gross service amount is </p>';
                 speechOutput +=''+amount;
                 speechOutput += ' pesos';
                                
