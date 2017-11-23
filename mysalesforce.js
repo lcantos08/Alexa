@@ -104,12 +104,13 @@ function getDailySummary(ddate){
 var groups = Object.keys(group_to_values).map(function (key) {
     return {sId: key, sName: group_to_values[key]};
 });
+                console.log('groups:::' + JSON.stringify(groups));
                 
                 speechOutput+='The services are the following:';
                 for (let i = 0; i < groups.length; i++) {
                     var g = groups[i];
-                    console.log('groups:::'+g.sName);
-                     speechOutput += `<p> ${g.sId} ${g.sName}</p>`;
+                    
+                     speechOutput += `<p>${g.sName}</p>`;
                      if (i === groups.length - 2) speechOutput += ' and ';
                 }
                 
