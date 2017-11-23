@@ -164,7 +164,7 @@ function getDailySummary(ddate){
                 speechOutput +=''+(amount-total_com);
                 speechOutput += ' pesos';
                 
-                speechOutput+='<p>Godd bye...</p>';
+                speechOutput+='<p>Good bye...</p>';
                 speechOutput+='<p>PS, Mahal ko si nanay...</p>';
                 
                 let output = {
