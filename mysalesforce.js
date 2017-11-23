@@ -99,30 +99,52 @@ function getDailySummary(ddate){
                 
                 
                 var group_to_values = a.reduce(function (obj, item) {
-    obj[item.sId] = obj[item.sId] || [];
-    obj[item.sId].push(item.sName);
-    return obj;
-}, {});
+                    obj[item.sId] = obj[item.sId] || [];
+                    obj[item.sId].push(item.sName);
+                    return obj;
+                }, {});
 
-var groups = Object.keys(group_to_values).map(function (key) {
-    return {sId: key, sName: group_to_values[key]};
-});
-                console.log('groups:::' + JSON.stringify(groups));
+                var groups = Object.keys(group_to_values).map(function (key) {
+                    return {sId: key, sName: group_to_values[key]};
+                });
                 
                 speechOutput+='The services are the following:';
                 for (let i = 0; i < groups.length; i++) {
-                    var g = groups[i];
-                    
+                    var g = groups[i];                    
                      speechOutput += `<p>${g.sName.length} ${g.sName[0]}</p>`;
                      if (i === groups.length - 2) speechOutput += ' and ';
                 }
-                
+                let coms = [];
                 for (let i = 0; i < a.length; i++) {
                     let id = a[i].sId;
                     let s = a[i].therapist.records[0];
-                    console.log(s.Staff__r.Alias__c + ' -- ' + s.Staff__r.Amount__c);
+                    coms.push({st:s.Staff__r.Alias__c, am:s.Amount__c});
+                    console.log(s.Staff__r.Alias__c + ' -- ' + s.Amount__c);
                     amount+= parseFloat(a[i].price);
                 }
+                
+                var staff_group_to_values = coms.reduce(function (obj, item) {
+                    obj[item.st] = obj[item.st] || [];
+                    obj[item.st].push(item.am);
+                    return obj;
+                }, {});
+
+                var staff_groups = Object.keys(staff_group_to_values).map(function (key) {
+                    return {st: key, am: staff_group_to_values[key]};
+                });
+                speechOutput+='The therapist service commisions are the following:';
+                
+                for (let i = 0; i < staff_groups.length; i++) {
+                    var c = staff_groups[i];
+                    var am = 0;
+                    for (let j = 0; j < c.am.length; j++) {
+                        am+= c.am[j].am;
+                    }
+                   speechOutput += `<p>${c.st.st} ${am}</p>`;
+                   if (i === staff_groups.length - 2) speechOutput += ' and ';
+                    
+                }
+                
                 speechOutput += '<break strength="x-strong"/>Total amount is ';
                 speechOutput +=''+amount;
                 
