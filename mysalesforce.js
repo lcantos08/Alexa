@@ -140,7 +140,7 @@ function getDailySummary(ddate){
                 var staff_groups = Object.keys(staff_group_to_values).map(function (key) {
                     return {st: key, am: staff_group_to_values[key]};
                 });
-                speechOutput+='<break strength="x-strong"/> The therapist service commissions are the following:';
+                speechOutput+='<break strength="x-strong"/> <p>The therapist service commissions are the following: <p>';
                 let total_com =0;
                 for (let i = 0; i < staff_groups.length; i++) {
                     var x = staff_groups[i];
