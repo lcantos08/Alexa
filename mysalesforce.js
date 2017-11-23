@@ -57,7 +57,7 @@ function getDailySummary(ddate){
         'service__r.Id, ',
         'service__r.Name__c, ',
         'Service__r.Price__c, ',
-        'Service__r.Commission__c ',
+        'Service__r.Commission__c, ',
         '(Select Staff__r.Alias__c from Staff_Commissions__r) ',
         'from Client_Service__c ',
         'where Date_Time__c=',
