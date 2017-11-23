@@ -119,10 +119,8 @@ var groups = Object.keys(group_to_values).map(function (key) {
                 
                 for (let i = 0; i < a.length; i++) {
                     let id = a[i].sId;
-                    console.log('theraphist::' + JSON.stringify(a[i].therapist));
-                   // speechOutput += `<p> ${a[i].sName} </p>`;
-                   
-                   // if (i === result.length - 2) speechOutput += ' and ';
+                    let s = a[i].therapist.records[0];
+                    console.log(s.Staff__r.Alias__c + ' -- ' + s.Staff__r.Amount__c);
                     amount+= parseFloat(a[i].price);
                 }
                 speechOutput += '<break strength="x-strong"/>Total amount is ';
