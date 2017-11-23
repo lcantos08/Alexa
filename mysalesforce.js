@@ -91,9 +91,9 @@ function getDailySummary(ddate){
                 let amount = 0;
                 speechOutput = `There are ${result.length} ${pluralize("services",result.length)} so far. `;
                 speechOutput += '<break strength="x-strong"/>Total amount is ';
-                for (let i = 0; i < result.length; i++) {
-                    console.log('result[i] : '+result[i]);
-                    amount+= parseFloat(result[i].price);
+                for (let i = 0; i < a.length; i++) {
+                    console.log('result[i] : '+a[i]);
+                    amount+= parseFloat(a[i].price);
                 }
                 
                 speechOutput +=''+amount;
