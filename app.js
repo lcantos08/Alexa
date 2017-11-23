@@ -87,8 +87,8 @@ alexaApp.intent("DailySalesIntent", {
     function(request, response) {
 
         response.reprompt("I didn't hear a valid date. Please ask something like 'What is the daily sales for October 20, 2017");
-        //request.slot('OrderId')
-        return mysalesforce.getDailySummary().then(function(output) {
+        //
+        return mysalesforce.getDailySummary(request.slot('SalesDate')).then(function(output) {
               response.say(output.say);
               response.card(output.card);
         });
