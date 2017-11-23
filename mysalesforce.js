@@ -171,7 +171,7 @@ function getDailySummary(ddate){
                 
                 
             }
-            speechOutput+=' hashtag lodi. hashtag petmalu';
+            speechOutput+=' hashtag low-dee. hashtag pet-ma-lu';
             let output = {
                 say: speechOutput,
                 card: {
