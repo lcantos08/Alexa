@@ -93,7 +93,7 @@ function getDailySummary(ddate){
             if (a.length==0){
                 speechOutput += ' There are no services found in the system on ' + ddate;
                 speechOutput += '<p> It is either, hindi seela nag-input sa system, o zero lang talaga! </p>'; 
-                speechOutput += '<p> in short, Vok-ya!!! <say-as interpret-as="expletive">Hahahahahaha </say-as> </p>';
+                speechOutput += '<p> in short, Vok-ya!!! <emphasis level="strong">Hahahahahaha </emphasis> </p>';
             }else{
                 let amount = 0;
                 let b = [], c=[];
