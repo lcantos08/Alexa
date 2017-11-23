@@ -44,7 +44,7 @@ function simplifyDataStructure(result) {
 }
 
 function getDailySummary(){
-    /*var query1 =''.concat(
+    var query1 =''.concat(
         'select ',
         'service__r.service_type__c, ',
         'service__r.Name__c, ',
@@ -106,7 +106,7 @@ function getDailySummary(){
             reject(null);
         });
     });
-    */
+    
 }
 /*
 function getOrderStatus(orderId) {
