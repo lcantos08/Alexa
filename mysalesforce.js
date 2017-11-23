@@ -95,7 +95,7 @@ function getDailySummary(ddate){
             }else{
                 let amount = 0;
                 let b = [], c=[];
-                speechOutput = `Hi Welcome to Body Tech Lemery. There were ${result.length} ${pluralize("services",result.length)} on ${ddate}. `;
+                speechOutput = `Hi my name is Olivia Natalie. Welcome to Body Tech Lemery. There were ${result.length} ${pluralize("services",result.length)} on ${ddate}. `;
                 
                 
                 var group_to_values = a.reduce(function (obj, item) {
@@ -126,7 +126,7 @@ function getDailySummary(ddate){
                     amount+= parseFloat(a[i].price);
                 }
                 
-                speechOutput += '<break strength="x-strong"/><p>Total gross service amount is </p>';
+                speechOutput += '<break strength="x-strong"/><p> Total gross service amount is </p>';
                 speechOutput +=''+amount;
                 speechOutput += ' pesos. ';
                                
@@ -158,14 +158,14 @@ function getDailySummary(ddate){
                 
                 speechOutput += '<break strength="x-strong"/><p>The total therapist commission is </p>';
                 speechOutput +=''+total_com;
-                speechOutput += ' pesos';
+                speechOutput += ' pesos. ';
                 
                 speechOutput += '<break strength="x-strong"/> <p>The Net daily sales is </p>';
                 speechOutput +=''+(amount-total_com);
                 speechOutput += ' pesos. ';
                 
-                speechOutput+='<p>Goodbye</p>';
-               // speechOutput+='<p>PS, Mahal ko si nanay...</p>';
+                speechOutput+='<p>Goodbye...</p>';
+                speechOutput+='<p>PS, Mahal ko si nanay...</p>';
                 
                 let output = {
                 say: speechOutput,
