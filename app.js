@@ -17,7 +17,7 @@ var alexa = require('alexa-app');
 var PORT = process.env.PORT || 3000;
 
 var app = express();
-var alexaApp = new alexa.app("universalcontainers");
+var alexaApp = new alexa.app("bodytech");
 
 alexaApp.express({
     expressApp: app,
@@ -49,7 +49,7 @@ alexaApp.pre = function(request, response, type) {
 
 alexaApp.launch(function(request, response) {
     response.say(WELCOME_MSG);
-    response.card("Universal Containers", WELCOME_MSG);
+    response.card("Body Tech", WELCOME_MSG);
 });
 
 /**
@@ -100,7 +100,7 @@ alexaApp.intent("AMAZON.HelpIntent", {}, function(request, response) {
     response.say("Here's some help. Try saying 'Ask Body Tech for status on order 100'");
     response.card({
         type: "Simple",
-        title: "Universal Containers",
+        title: "Body Tech",
         content: "Valid syntax:\nAsk Universal Containers about 100\nAsk Universal Containers for status on order 100"
     });
 });
