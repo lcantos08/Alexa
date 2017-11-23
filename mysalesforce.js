@@ -49,7 +49,7 @@ function getDailySummary(){
         'service__r.service_type__c, ',
         'service__r.Name__c, ',
         'Service__r.Price__c, ',
-        'Service__r.Commission__c '
+        'Service__r.Commission__c ',
         'from Client_Service__c where ',
         'where Date_Time__c=2016-10-10'
     );
