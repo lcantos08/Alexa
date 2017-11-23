@@ -108,8 +108,8 @@ var groups = Object.keys(group_to_values).map(function (key) {
                 speechOutput+='The services are the following:';
                 for (let i = 0; i < groups.length; i++) {
                     var g = groups[i];
-                    console.log('groups:::'+g[0].sName);
-                     //speechOutput += `<p> ${g.length} ${g[0].sName}</p>`;
+                    console.log('groups:::'+g.sName);
+                     speechOutput += `<p> ${g.sId} ${g.sName}</p>`;
                      if (i === groups.length - 2) speechOutput += ' and ';
                 }
                 
