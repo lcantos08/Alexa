@@ -167,7 +167,7 @@ function getDailySummary(ddate){
                 speechOutput += ' pesos. ';
                 
                 speechOutput+='<p>Goodbye. </p>';
-                speechOutput+='<p>PS, Mahal ko si nanay...</p>';
+                speechOutput+='<p>PS, Ma hal co c nah nigh...</p>';
                 
                 
             }
