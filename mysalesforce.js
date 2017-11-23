@@ -115,9 +115,7 @@ function getDailySummary(ddate){
                      if (i === groups.length - 2) speechOutput += ' and ';
                 }
                 
-                speechOutput += '<break strength="x-strong"/>Total gross service amount is ';
-                speechOutput +=''+amount;
-                speechOutput += ' pesos';
+                
                 
                 let coms = [];
                 for (let i = 0; i < a.length; i++) {
@@ -127,6 +125,10 @@ function getDailySummary(ddate){
                     console.log(s.Staff__r.Alias__c + ' -- ' + s.Amount__c);
                     amount+= parseFloat(a[i].price);
                 }
+                
+                speechOutput += '<break strength="x-strong"/>Total gross service amount is ';
+                speechOutput +=''+amount;
+                speechOutput += ' pesos';
                                
                 
                 var staff_group_to_values = coms.reduce(function (obj, item) {
@@ -154,13 +156,15 @@ function getDailySummary(ddate){
                     
                 }
                 
-                speechOutput += '<break strength="x-strong"/>The total therapist commission is ';
+                speechOutput += '<break strength="x-strong"/><p>The total therapist commission is </p>';
                 speechOutput +=''+total_com;
                 speechOutput += ' pesos';
                 
-                speechOutput += '<break strength="x-strong"/>The Net daily sales is ';
+                speechOutput += '<break strength="x-strong"/> <p>The Net daily sales is </p>';
                 speechOutput +=''+(amount-total_com);
                 speechOutput += ' pesos';
+                
+                speechOutput+='<p>Good bye!</p>';
                 
                 let output = {
                 say: speechOutput,
