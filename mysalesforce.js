@@ -91,11 +91,13 @@ function getDailySummary(ddate){
            let speechOutput ='Hi my name is Olivia Natalie. Welcome to Body Tech Lemery. ';
             
             if (a.length==0){
-                    speechOutput += ' There are no services found in the system on ${ddate}. It is either, hindi sila nag-input, o zero talaga, in short, bokya !!! Hahahah!!';
+                speechOutput += ' There are no services found in the system on ' + ddate;
+                speechOutput += '<p> It is either, hindi sila nag-input sa system, o zero lang talaga! </p>'; 
+                speechOutput += '<p> in short, bokya !!! Hahahah!! </p>';
             }else{
                 let amount = 0;
                 let b = [], c=[];
-                speechOutput = ` There were ${result.length} ${pluralize("services",result.length)} on ${ddate}. `;
+                speechOutput += ` There were ${result.length} ${pluralize("services",result.length)} on ${ddate}. `;
                 
                 
                 var group_to_values = a.reduce(function (obj, item) {
