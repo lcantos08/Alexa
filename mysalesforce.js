@@ -101,7 +101,9 @@ function getDailySummary(){
             }
             
         }).error(function(err) {
-        
+            alert(''+err);
+            console.log('ERROR!!!!!', err);
+            reject(null);
         });
     });
 }
