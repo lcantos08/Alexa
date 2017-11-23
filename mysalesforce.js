@@ -114,6 +114,11 @@ function getDailySummary(ddate){
                      speechOutput += `<p>${g.sName.length} ${g.sName[0]}</p>`;
                      if (i === groups.length - 2) speechOutput += ' and ';
                 }
+                
+                speechOutput += '<break strength="x-strong"/>Total gross service amount is ';
+                speechOutput +=''+amount;
+                speechOutput += ' pesos';
+                
                 let coms = [];
                 for (let i = 0; i < a.length; i++) {
                     let id = a[i].sId;
@@ -122,6 +127,7 @@ function getDailySummary(ddate){
                     console.log(s.Staff__r.Alias__c + ' -- ' + s.Amount__c);
                     amount+= parseFloat(a[i].price);
                 }
+                               
                 
                 var staff_group_to_values = coms.reduce(function (obj, item) {
                     obj[item.st] = obj[item.st] || [];
@@ -133,7 +139,7 @@ function getDailySummary(ddate){
                     return {st: key, am: staff_group_to_values[key]};
                 });
                 speechOutput+='<break strength="x-strong"/> The therapist service commissions are the following:';
-                
+                let total_com =0;
                 for (let i = 0; i < staff_groups.length; i++) {
                     var x = staff_groups[i];
                     console.log('XXXXX::: ' + JSON.stringify(x));
@@ -141,15 +147,21 @@ function getDailySummary(ddate){
                     for (let j = 0; j < x.am.length; j++) {
                         am+= x.am[j];
                     }
+                    total_com+=am;
                    speechOutput += '<break strength="x-strong"/>';
-                   speechOutput += `<p>${x.st} ${am} pesos</p>`;
+                   speechOutput += `<p>${x.st} ${am} pesos </p>`;
                    if (i === staff_groups.length - 2) speechOutput += ' and ';
                     
                 }
                 
-                speechOutput += '<break strength="x-strong"/>Total amount is ';
-                speechOutput +=''+amount;
+                speechOutput += '<break strength="x-strong"/>The total therapist commission is ';
+                speechOutput +=''+total_com;
                 speechOutput += ' pesos';
+                
+                speechOutput += '<break strength="x-strong"/>The Net daily sales is ';
+                speechOutput +=''+(amount-total_com);
+                speechOutput += ' pesos';
+                
                 let output = {
                 say: speechOutput,
                 card: {
