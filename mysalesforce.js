@@ -39,8 +39,47 @@ function simplifyDataStructure(result) {
             truckLng: result[i].get('truck__r').Longitude__c
         });
     }
+    let speechoutput ='';
+    
+}
 
-    return a;
+function getDailySummary(mDate){
+    var query1 =''.concat(
+        'select ',
+        'service__r.service_type__c, ',
+        'service__r.Name__c, ',
+        'Service__r.Price__c, ',
+        'Service__r.Commission__c '
+        'from Client_Service__c where ',
+        'where Date_Time__c=2016-10-10'
+    );
+    return new Promise(function(resolve, reject) {
+        org.authenticate({ // authenticate the user
+
+            username: USERNAME,
+            password: PASSWORD
+
+        }).then(function(){
+             return org.query({
+                query: query1
+            })
+        }).then(function(results){
+            let a = [];
+            let result = results.records;
+            for (let i = 0; i < result.length; i++) {
+                a.push({
+                    sType: result[i].get('service__r').service_type__c,
+                    sName: result[i].get('service__r').Name__c,
+                    price: result[i].get('service__r').Price__c,
+                    commission: result[i].get('service__r').Commission__c
+                });
+            }
+            return a;
+            
+        }).error(function(err) {
+        
+        });
+    });
 }
 
 function getOrderStatus(orderId) {
