@@ -91,7 +91,7 @@ function getDailySummary(ddate){
            let speechOutput ='Hi my name is Olivia Natalie. ';
             
             if (a.length==0){
-                    speechOutput = ' There is no service on ${ddate}. In short, matumal, nga-nga. Hahahah!!';
+                    speechOutput += ' There are no services found in the system on ${ddate}. It is either, hindi sila nag-input o zero talaga -- In short, bokya!!! Hahahah!!';
             }else{
                 let amount = 0;
                 let b = [], c=[];
