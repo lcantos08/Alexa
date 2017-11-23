@@ -54,6 +54,7 @@ function getDailySummary(ddate){
     var query1 =''.concat(
         'select ',
         'service__r.service_type__c, ',
+        'service__r.Id, ',
         'service__r.Name__c, ',
         'Service__r.Price__c, ',
         'Service__r.Commission__c ',
@@ -77,6 +78,7 @@ function getDailySummary(ddate){
             let result = results.records;
             for (let i = 0; i < result.length; i++) {
                 a.push({
+                    sId: result[i].get('service__r').Id,
                     sType: result[i].get('service__r').service_type__c,
                     sName: result[i].get('service__r').Name__c,
                     price: result[i].get('service__r').Price__c,
@@ -89,10 +91,23 @@ function getDailySummary(ddate){
                     speechOutput = 'No service today.';
             }else{
                 let amount = 0;
+                let b = [], c=[];
                 speechOutput = `Welcome to Body Tech Lemery. There are ${result.length} ${pluralize("services",result.length)} so far. `;
                 speechOutput+='The services are the following:';
+                
+                var group_to_values = a.reduce(function (obj, item) {
+    obj[item.sId] = obj[item.group] || [];
+    obj[item.sId].push(item.sName);
+    return obj;
+}, {});
+
+var groups = Object.keys(group_to_values).map(function (key) {
+    return {sId: key, sName: group_to_values[key]};
+});
+                console.log('groups:::'+groups);
                 for (let i = 0; i < a.length; i++) {
-                    console.log('result[i] : '+a[i]);
+                    let id = a[i].sId;
+                    
                     speechOutput += `<p> ${a[i].sName} </p>`;
                    
                     if (i === result.length - 2) speechOutput += ' and ';
