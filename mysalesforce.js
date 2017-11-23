@@ -132,7 +132,7 @@ function getDailySummary(ddate){
                 var staff_groups = Object.keys(staff_group_to_values).map(function (key) {
                     return {st: key, am: staff_group_to_values[key]};
                 });
-                speechOutput+='The therapist service commissions are the following:';
+                speechOutput+='<break strength="x-strong"/> The therapist service commissions are the following:';
                 
                 for (let i = 0; i < staff_groups.length; i++) {
                     var x = staff_groups[i];
@@ -141,14 +141,15 @@ function getDailySummary(ddate){
                     for (let j = 0; j < x.am.length; j++) {
                         am+= x.am[j];
                     }
-                   speechOutput += `<p>${x.st} ${am}</p>`;
+                   speechOutput += '<break strength="x-strong"/>';
+                   speechOutput += `<p>${x.st} ${am} pesos</p>`;
                    if (i === staff_groups.length - 2) speechOutput += ' and ';
                     
                 }
                 
                 speechOutput += '<break strength="x-strong"/>Total amount is ';
                 speechOutput +=''+amount;
-                
+                speechOutput += ' pesos';
                 let output = {
                 say: speechOutput,
                 card: {
